@@ -1,43 +1,41 @@
-\# Credit Scoring Deployment
-
-
+# Credit Scoring Deployment
 
 Projet MLOps de déploiement d’un modèle de scoring crédit.
 
+## Objectif
 
+Déployer un modèle de machine learning via une API FastAPI avec :
 
-\## Fonctionnalités
+- Docker
+- GitHub Actions CI/CD
+- Tests automatisés
+- Interface Gradio
+- Monitoring simple du data drift
+- Déploiement cloud via Hugging Face Spaces
 
+---
 
+## Stack technique
 
-\- API FastAPI
+- Python
+- FastAPI
+- Gradio
+- Docker
+- Pytest
+- GitHub Actions
+- LightGBM
+- Hugging Face Spaces
 
-\- Interface Gradio
+---
 
-\- Dockerisation
-
-\- Tests automatisés avec Pytest
-
-\- Pipeline CI/CD GitHub Actions
-
-
-
-\---
-
-
-
-\## Installation
-
-
+## Structure du projet
 
 ```bash
+src/
+├── api/
+├── monitoring/
+├── app_gradio.py
 
-pip install -r requirements.txt
-
-## Monitoring et Data Drift
-
-Un script de monitoring est disponible dans `src/monitoring/data_drift.py`.
-
-Il compare des données de référence avec des données courantes simulées afin d’identifier un éventuel décalage de distribution sur les variables importantes du modèle.
-
-Les rapports graphiques sont générés dans le dossier `reports/`.
+models/
+tests/
+reports/
