@@ -12,3 +12,4 @@ seaborn
 pytest
 httpx
 python-multipart
+gradio
