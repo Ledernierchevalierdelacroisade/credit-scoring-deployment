@@ -8,4 +8,6 @@ data/
 *.csv
 *.parquet
 *.zip
-.env
+.env__pycache__/
+*.pyc
+.venv/
