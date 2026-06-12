@@ -1,0 +1,13 @@
+.venv/
+venv/
+data/
+mlruns/
+reports/
+notebooks/
+.git/
+__pycache__/
+.ipynb_checkpoints/
+*.csv
+*.parquet
+*.zip
+*.db
