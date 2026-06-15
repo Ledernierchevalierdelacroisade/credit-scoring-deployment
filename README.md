@@ -28,6 +28,29 @@ Déployer un modèle de machine learning via une API FastAPI avec :
 
 ---
 
+## Performance et scalabilité
+
+Le modèle est chargé une seule fois au démarrage de l’API, en dehors de la route `/predict`.
+
+Cela évite de recharger le modèle à chaque requête, ce qui permet de :
+
+- réduire le temps de réponse ;
+- éviter une surcharge mémoire ;
+- améliorer la scalabilité de l’API.
+
+La route `/health` permet également de vérifier rapidement que l’API est disponible.
+
+---
+
+## Monitoring et analyse des données de production
+
+L’API enregistre chaque prédiction dans un fichier de logs structuré au format JSONL :
+
+```bash
+logs/predictions.jsonl
+
+---
+
 ## Structure du projet
 
 ```bash
@@ -39,3 +62,4 @@ src/
 models/
 tests/
 reports/
+
