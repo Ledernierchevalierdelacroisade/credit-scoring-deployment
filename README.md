@@ -28,6 +28,17 @@ Déployer un modèle de machine learning via une API FastAPI avec :
 
 ---
 
+## Stratégie Git
+
+Le projet utilise une stratégie de branche simple :
+
+- `main` : branche stable contenant le code validé.
+- `develop` : branche de développement utilisée pour préparer les évolutions avant fusion.
+
+Les commits sont rédigés avec des messages explicites afin de tracer l’évolution du projet.
+
+---
+
 ## Structure du projet
 
 ```bash
@@ -39,3 +50,4 @@ src/
 models/
 tests/
 reports/
+
