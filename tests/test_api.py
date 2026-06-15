@@ -99,3 +99,34 @@ def test_predict_invalid_days_birth():
 
     response = client.post("/predict", json=payload, headers=HEADERS)
     assert response.status_code == 422
+    
+def test_predict_invalid_annuity():
+    payload = {
+        "AMT_CREDIT": 500000,
+        "AMT_INCOME_TOTAL": 200000,
+        "AMT_ANNUITY": -1000,
+    }
+
+    response = client.post("/predict", json=payload, headers=HEADERS)
+    assert response.status_code == 422
+
+
+def test_predict_invalid_days_employed():
+    payload = {
+        "AMT_CREDIT": 500000,
+        "AMT_INCOME_TOTAL": 200000,
+        "DAYS_EMPLOYED": 1500,
+    }
+
+    response = client.post("/predict", json=payload, headers=HEADERS)
+    assert response.status_code == 422
+
+
+def test_predict_unrealistic_credit():
+    payload = {
+        "AMT_CREDIT": 999999999,
+        "AMT_INCOME_TOTAL": 200000,
+    }
+
+    response = client.post("/predict", json=payload, headers=HEADERS)
+    assert response.status_code == 422
