@@ -13,3 +13,6 @@ pytest
 httpx
 python-multipart
 gradio
+onnxmltools
+onnxruntime
+skl2onnx

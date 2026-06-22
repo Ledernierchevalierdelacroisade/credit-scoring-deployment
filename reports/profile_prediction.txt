@@ -1,0 +1,28 @@
+         456953 function calls (441737 primitive calls) in 0.446 seconds
+
+   Ordered by: cumulative time
+   List reduced from 376 to 20 due to restriction <20>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      100    0.002    0.000    0.446    0.004 C:\Users\bapti\Documents\home_credit_mlops\src\monitoring\profile_prediction.py:25(predict_once)
+      100    0.002    0.000    0.341    0.003 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\lightgbm\sklearn.py:1615(predict_proba)
+      100    0.003    0.000    0.337    0.003 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\lightgbm\sklearn.py:1093(predict)
+      100    0.000    0.000    0.247    0.002 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\lightgbm\basic.py:4701(predict)
+      100    0.002    0.000    0.231    0.002 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\lightgbm\basic.py:1100(predict)
+      100    0.009    0.000    0.205    0.002 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\lightgbm\basic.py:827(_data_from_pandas)
+      100    0.001    0.000    0.136    0.001 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\lightgbm\basic.py:810(_pandas_to_numpy)
+      100    0.000    0.000    0.118    0.001 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\lightgbm\basic.py:798(_check_for_bad_pandas_dtypes)
+      100    0.015    0.000    0.117    0.001 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\lightgbm\basic.py:799(<listcomp>)
+    25200    0.028    0.000    0.101    0.000 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\lightgbm\basic.py:793(_is_allowed_numpy_dtype)
+      100    0.001    0.000    0.070    0.001 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\lightgbm\sklearn.py:801(_process_params)
+    38300    0.025    0.000    0.069    0.000 {built-in method builtins.getattr}
+      100    0.000    0.000    0.060    0.001 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\frame.py:5381(reindex)
+      100    0.001    0.000    0.059    0.001 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\generic.py:5365(reindex)
+      100    0.001    0.000    0.056    0.001 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\generic.py:5636(_reindex_axes)
+  200/100    0.001    0.000    0.056    0.001 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\lightgbm\sklearn.py:735(get_params)
+      300    0.003    0.000    0.049    0.000 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\base.py:248(get_params)
+      300    0.002    0.000    0.045    0.000 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\base.py:218(_get_param_names)
+    25200    0.044    0.000    0.044    0.000 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\numpy\__init__.py:717(__getattr__)
+      100    0.002    0.000    0.044    0.000 C:\Users\bapti\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\frame.py:698(__init__)
+
+
