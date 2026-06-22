@@ -46,6 +46,22 @@ La route `/health` permet également de vérifier rapidement que l’API est dis
 
 L’API enregistre chaque prédiction dans un fichier de logs structuré au format JSONL :
 
+### Détection de dérive des données
+
+### Points de vigilance
+
+- Les données de production doivent être conservées selon les règles RGPD.
+- Les informations personnelles sensibles doivent être anonymisées.
+- Le volume des logs doit être surveillé afin d'éviter une croissance excessive des coûts de stockage.
+- Une référence stable est nécessaire pour interpréter correctement la dérive des données.
+
+Le script :
+
+```bash
+python src/monitoring/data_drift.py
+
+
+
 ```bash
 logs/predictions.jsonl
 

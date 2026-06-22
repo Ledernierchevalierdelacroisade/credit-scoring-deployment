@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Dict, Any
 import os
 import json
+import time
 from datetime import datetime
 
 import joblib
@@ -39,6 +40,8 @@ def health():
 def predict(data: Dict[str, Any], x_api_key: str = Header(None)):
     if x_api_key != API_KEY:
         raise HTTPException(status_code=401, detail="Invalid or missing API key")
+        
+    start_time = time.time()
 
     try:
         if not data:
@@ -86,13 +89,22 @@ def predict(data: Dict[str, Any], x_api_key: str = Header(None)):
         probability = float(model.predict_proba(df)[:, 1][0])
         prediction = int(probability >= THRESHOLD)
 
+        latency_ms = round((time.time() - start_time) * 1000, 2)
+
         log_entry = {
             "timestamp": str(datetime.now()),
-            "input": data,
+        "source": "api",
+        "model_name": "LightGBM",
+        "model_version": "1.0",
+        "status": "success",
+        "latency_ms": latency_ms,
+        "input": data,
+        "output": {
             "probability": probability,
             "prediction": prediction,
-            "threshold": THRESHOLD,
-        }
+            "threshold": THRESHOLD
+    }
+}
 
         with open(LOG_DIR / "predictions.jsonl", "a", encoding="utf-8") as f:
             f.write(json.dumps(log_entry) + "\n")
