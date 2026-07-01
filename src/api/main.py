@@ -93,13 +93,15 @@ def predict(data: Dict[str, Any], x_api_key: str = Header(None)):
 
         log_entry = {
             "timestamp": str(datetime.now()),
-        "source": "api",
-        "model_name": "LightGBM",
-        "model_version": "1.0",
-        "status": "success",
-        "latency_ms": latency_ms,
-        "input": data,
-        "output": {
+            "source": "api",
+            "model_name": "LightGBM",
+            "model_version": "1.0",
+            "status": "success",
+            "latency_ms": latency_ms,
+
+            "input": data,
+
+            "output": {
             "probability": probability,
             "prediction": prediction,
             "threshold": THRESHOLD

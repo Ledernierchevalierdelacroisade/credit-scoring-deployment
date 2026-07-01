@@ -27,6 +27,15 @@ with open(LOG_FILE, "r", encoding="utf-8") as f:
 
 df = pd.DataFrame(logs)
 
+# Compatibilité avec le nouveau format structuré
+if "output" in df.columns:
+    df["probability"] = df["output"].apply(lambda x: x["probability"])
+    df["prediction"] = df["output"].apply(lambda x: x["prediction"])
+    df["threshold"] = df["output"].apply(lambda x: x["threshold"])
+
+if "latency_ms" not in df.columns:
+    df["latency_ms"] = None
+
 if df.empty:
     st.warning("Aucune prédiction enregistrée.")
     st.stop()
@@ -41,6 +50,12 @@ col1, col2, col3 = st.columns(3)
 col1.metric("Nombre de prédictions", len(df))
 col2.metric("Probabilité moyenne", round(df["probability"].mean(), 3))
 col3.metric("Taux de refus", f"{df['prediction'].mean():.1%}")
+
+if df["latency_ms"].notna().any():
+    st.metric(
+        "Latence moyenne API",
+        f"{df['latency_ms'].mean():.2f} ms"
+    )
 
 st.divider()
 
